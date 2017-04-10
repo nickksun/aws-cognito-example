@@ -4,10 +4,10 @@ import BasicField from './BasicField'
 
 const validate = values => {
   const errors = {}
-  if (!values.username) {
-    errors.username = 'Required'
-  } else if (values.username.length > 15) {
-    errors.username = 'Must be 15 characters or less'
+  if (!values.name) {
+    errors.name = 'Required'
+  } else if (values.name.length > 100) {
+    errors.name = 'Must be 100 characters or less'
   }
   if (!values.email) {
     errors.email = 'Required.'
@@ -35,7 +35,7 @@ const FormUser = (props) => {
   console.log(props)
   return (
     <form onSubmit={handleSubmit}>
-      <Field name='username' type='text' component={BasicField} label='username' />
+      <Field name='name' type='text' component={BasicField} label='full name' />
       <Field name='email' type='email' component={BasicField} label='email' />
       <Field name='password' type='password' component={BasicField} label='password' />
       <Field name='password2' type='password' component={BasicField} label='password (again)' />
